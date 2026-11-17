@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -7,538 +6,138 @@
 <title>طبيب النبات</title>
 <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-/* متغيرات الألوان والثيم الفاتح والداكن */
-:root {
-  --bg: #F2F5EE;
-  --panel: #fff;
-  --ink: #1C2B21;
-  --mute: #5D6F63;
-  --line: #D6DFD3;
-  --acc: #2F7D4F;
-  --acc-ink: #fff;
-  --warn: #B56A00;
-  --bad: #B3261E;
-  --soft: #E7EFE3;
-  box-sizing: border-box;
-  padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #101A14;
-    --panel: #18251D;
-    --ink: #E6EFE8;
-    --mute: #9CB0A2;
-    --line: #2B3C31;
-    --acc: #5BC081;
-    --acc-ink: #0C1A11;
-    --warn: #F0A63A;
-    --bad: #FF8A80;
-    --soft: #1F3026;
-  }
-}
-
-:root[data-theme="dark"] {
-  --bg: #101A14;
-  --panel: #18251D;
-  --ink: #E6EFE8;
-  --mute: #9CB0A2;
-  --line: #2B3C31;
-  --acc: #5BC081;
-  --acc-ink: #0C1A11;
-  --warn: #F0A63A;
-  --bad: #FF8A80;
-  --soft: #1F3026;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-padding-top: env(safe-area-inset-top, 0px);
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: "Readex Pro", system-ui, Tahoma, sans-serif;
-  line-height: 1.75;
-  font-size: 15px;
-}
-
-main {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 16px 16px 48px;
-}
-
-h1 {
-  font-size: 23px;
-  font-weight: 600;
-  margin: 6px 0 2px;
-}
-
-.sub {
-  color: var(--mute);
-  margin: 0 0 16px;
-}
-
-.card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 16px;
-  margin-bottom: 14px;
-}
-
-label {
-  display: block;
-  font-weight: 600;
-  margin: 12px 0 4px;
-  font-size: 14px;
-}
-
-label:first-child {
-  margin-top: 0;
-}
-
-input[type=text], textarea {
-  width: 100%;
-  font: inherit;
-  color: var(--ink);
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 9px 10px;
-}
-
-textarea {
-  min-height: 86px;
-  resize: vertical;
-}
-
-/* منطقة رفع الصور */
-.drop {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  border: 2px dashed var(--line);
-  border-radius: 12px;
-  padding: 22px 10px;
-  text-align: center;
-  color: var(--mute);
-  cursor: pointer;
-  background: var(--bg);
-}
-
-.drop strong {
-  color: var(--ink);
-}
-
-.drop input {
-  display: none;
-}
-
-.thumbs {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-.thumbs div {
-  position: relative;
-  width: 84px;
-  height: 84px;
-}
-
-.thumbs img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-}
-
-.thumbs button {
-  position: absolute;
-  top: -6px;
-  inset-inline-start: -6px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 0;
-  background: var(--ink);
-  color: var(--bg);
-  cursor: pointer;
-  line-height: 1;
-}
-
-/* زر التشخيص */
-.btn {
-  width: 100%;
-  font: inherit;
-  font-weight: 600;
-  font-size: 16px;
-  border: 0;
-  border-radius: 10px;
-  padding: 13px;
-  margin-top: 16px;
-  background: var(--acc);
-  color: var(--acc-ink);
-  cursor: pointer;
-}
-
-.btn:disabled {
-  opacity: .55;
-  cursor: default;
-}
-
-.msg {
-  margin-top: 10px;
-  font-size: 13.5px;
-  color: var(--mute);
-}
-
-.msg.err {
-  color: var(--bad);
-}
-
-/* تنسيق بطاقة النتائج */
-h2 {
-  font-size: 18px;
-  margin: 0 0 4px;
-}
-
-h3 {
-  font-size: 15px;
-  margin: 14px 0 4px;
-}
-
-.tag {
-  display: inline-block;
-  border-radius: 999px;
-  padding: 1px 12px;
-  font-size: 12.5px;
-  font-weight: 600;
-  background: var(--soft);
-  margin-inline-end: 6px;
-}
-
-.tag.hi {
-  background: var(--acc);
-  color: var(--acc-ink);
-}
-
-.tag.urg {
-  background: var(--warn);
-  color: #fff;
-}
-
-ul {
-  margin: 4px 0;
-  padding-inline-start: 20px;
-}
-
-li {
-  margin: 3px 0;
-}
-
-.alt {
-  border-top: 1px solid var(--line);
-  margin-top: 14px;
-  padding-top: 12px;
-}
-
-.warn {
-  background: var(--soft);
-  border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 13.5px;
-  margin-top: 12px;
-}
-
-.q {
-  color: var(--warn);
-  font-weight: 600;
-}
-
-.spin {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border: 2px solid var(--line);
-  border-top-color: var(--acc);
-  border-radius: 50%;
-  animation: s 1s linear infinite;
-  vertical-align: -2px;
-  margin-inline-end: 6px;
-}
-
-@keyframes s {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .spin {
-    animation: none;
-  }
-}
+:root{--bg:#F2F5EE;--panel:#fff;--ink:#1C2B21;--mute:#5D6F63;--line:#D6DFD3;--acc:#2F7D4F;--acc-ink:#fff;--warn:#B56A00;--bad:#B3261E;--soft:#E7EFE3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101A14;--panel:#18251D;--ink:#E6EFE8;--mute:#9CB0A2;--line:#2B3C31;--acc:#5BC081;--acc-ink:#0C1A11;--warn:#F0A63A;--bad:#FF8A80;--soft:#1F3026}}
+:root[data-theme="dark"]{--bg:#101A14;--panel:#18251D;--ink:#E6EFE8;--mute:#9CB0A2;--line:#2B3C31;--acc:#5BC081;--acc-ink:#0C1A11;--warn:#F0A63A;--bad:#FF8A80;--soft:#1F3026}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Readex Pro",system-ui,Tahoma,sans-serif;line-height:1.75;font-size:15px}
+main{max-width:680px;margin:0 auto;padding:16px 16px 48px}
+h1{font-size:23px;font-weight:600;margin:6px 0 2px}
+.sub{color:var(--mute);margin:0 0 16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+label{display:block;font-weight:600;margin:12px 0 4px;font-size:14px}
+label:first-child{margin-top:0}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px}
+textarea{min-height:86px;resize:vertical}
+.drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:2px dashed var(--line);border-radius:12px;padding:22px 10px;text-align:center;color:var(--mute);cursor:pointer;background:var(--bg)}
+.drop strong{color:var(--ink)}
+.drop input{display:none}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.thumbs div{position:relative;width:84px;height:84px}
+.thumbs img{width:100%;height:100%;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.thumbs button{position:absolute;top:-6px;inset-inline-start:-6px;width:24px;height:24px;border-radius:50%;border:0;background:var(--ink);color:var(--bg);cursor:pointer;line-height:1}
+.btn{width:100%;font:inherit;font-weight:600;font-size:16px;border:0;border-radius:10px;padding:13px;margin-top:16px;background:var(--acc);color:var(--acc-ink);cursor:pointer}
+.btn:disabled{opacity:.55;cursor:default}
+.msg{margin-top:10px;font-size:13.5px;color:var(--mute)}.msg.err{color:var(--bad)}
+h2{font-size:18px;margin:0 0 4px}
+h3{font-size:15px;margin:14px 0 4px}
+.tag{display:inline-block;border-radius:999px;padding:1px 12px;font-size:12.5px;font-weight:600;background:var(--soft);margin-inline-end:6px}
+.tag.hi{background:var(--acc);color:var(--acc-ink)}.tag.urg{background:var(--warn);color:#fff}
+ul{margin:4px 0;padding-inline-start:20px}li{margin:3px 0}
+.alt{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+.warn{background:var(--soft);border-radius:10px;padding:10px 12px;font-size:13.5px;margin-top:12px}
+.q{color:var(--warn);font-weight:600}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid var(--line);border-top-color:var(--acc);border-radius:50%;animation:s 1s linear infinite;vertical-align:-2px;margin-inline-end:6px}
+@keyframes s{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spin{animation:none}}
 </style>
 </head>
 <body>
 <main>
-  <h1>طبيب النبات</h1>
-  <p class="sub">صوّر الورقة أو الثمرة المصابة واوصف المشكلة، وتحصل على التشخيص المحتمل وخطوات العلاج.</p>
+<h1>طبيب النبات</h1>
+<p class="sub">صوّر الورقة أو الثمرة المصابة واوصف المشكلة، وتحصل على التشخيص المحتمل وخطوات العلاج.</p>
 
-  <div class="card">
-    <label for="file">صور النبات (حتى 3 صور)</label>
-    <label class="drop" for="file">
-      <strong>التقط صورة أو اختر من المعرض</strong>
-      <span>صوّر الجزء المصاب من قرب، وصورة للنبات كاملًا إن أمكن</span>
-      <input id="file" type="file" accept="image/*" multiple>
-    </label>
-    <div class="thumbs" id="thumbs"></div>
-
-    <label for="plant">نوع النبات (إن عرفته)</label>
-    <input id="plant" type="text" placeholder="مثال: طماطم، ورد جوري، نخيل">
-
-    <label for="desc">وصف المشكلة</label>
-    <textarea id="desc" placeholder="مثال: بقع بنية على الأوراق السفلية بدأت من أسبوع، والأوراق بتصفر وتقع"></textarea>
-
-    <button class="btn" id="go">شخّص المشكلة</button>
-    <div class="msg" id="msg"></div>
-  </div>
-
-  <div id="result"></div>
+<div class="card">
+  <label for="file">صور النبات (حتى 3 صور)</label>
+  <label class="drop" for="file"><strong>التقط صورة أو اختر من المعرض</strong><span>صوّر الجزء المصاب من قرب، وصورة للنبات كاملًا إن أمكن</span><input id="file" type="file" accept="image/*" multiple></label>
+  <div class="thumbs" id="thumbs"></div>
+  <label for="plant">نوع النبات (إن عرفته)</label>
+  <input id="plant" type="text" placeholder="مثال: طماطم، ورد جوري، نخيل">
+  <label for="desc">وصف المشكلة</label>
+  <textarea id="desc" placeholder="مثال: بقع بنية على الأوراق السفلية بدأت من أسبوع، والأوراق بتصفر وتقع"></textarea>
+  <button class="btn" id="go">شخّص المشكلة</button>
+  <div class="msg" id="msg"></div>
+</div>
+<div id="result"></div>
 </main>
 
 <script>
-// أداة مختصرة لاختيار العناصر
-const $ = s => document.querySelector(s);
-let blobs = [];
+const $=s=>document.querySelector(s);
+let blobs=[];
 
-// دالة ضغط وتصغير الصور قبل الإرسال لتسريع التحليل وتقليل استهلاك البيانات
-async function shrink(file) {
-  const url = URL.createObjectURL(file);
-  const img = new Image();
-  await new Promise((r, j) => {
-    img.onload = r;
-    img.onerror = j;
-    img.src = url;
-  });
-  const k = Math.min(1, 1024 / Math.max(img.width, img.height));
-  const c = document.createElement('canvas');
-  c.width = Math.round(img.width * k);
-  c.height = Math.round(img.height * k);
-  c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
-  URL.revokeObjectURL(url);
-  return new Promise(r => c.toBlob(r, 'image/jpeg', 0.82));
+async function shrink(file){
+  const url=URL.createObjectURL(file),img=new Image();
+  await new Promise((r,j)=>{img.onload=r;img.onerror=j;img.src=url});
+  const k=Math.min(1,1024/Math.max(img.width,img.height)),c=document.createElement('canvas');
+  c.width=Math.round(img.width*k);c.height=Math.round(img.height*k);
+  c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(url);
+  return new Promise(r=>c.toBlob(r,'image/jpeg',.82));
 }
-
-// عرض الصور المصغرة المرفوعة مع إمكانية حذف أي صورة
-function thumbs() {
-  const t = $('#thumbs');
-  t.innerHTML = '';
-  blobs.forEach((b, i) => {
-    const d = document.createElement('div');
-    const im = document.createElement('img');
-    const x = document.createElement('button');
-    im.src = URL.createObjectURL(b);
-    im.alt = 'صورة ' + (i + 1);
-    x.textContent = '×';
-    x.setAttribute('aria-label', 'حذف الصورة');
-    x.onclick = () => {
-      blobs.splice(i, 1);
-      thumbs();
-    };
-    d.append(im, x);
-    t.appendChild(d);
-  });
+function thumbs(){
+  const t=$('#thumbs');t.innerHTML='';
+  blobs.forEach((b,i)=>{const d=document.createElement('div'),im=document.createElement('img'),x=document.createElement('button');
+    im.src=URL.createObjectURL(b);im.alt='صورة '+(i+1);x.textContent='×';x.setAttribute('aria-label','حذف الصورة');
+    x.onclick=()=>{blobs.splice(i,1);thumbs()};d.append(im,x);t.appendChild(d)});
 }
-
-// الاستماع لاختيار الصور
-$('#file').onchange = async e => {
-  for (const f of [...e.target.files]) {
-    if (blobs.length >= 3) break;
-    try {
-      blobs.push(await shrink(f));
-    } catch (_) {}
-  }
-  e.target.value = '';
-  thumbs();
+$('#file').onchange=async e=>{
+  for(const f of [...e.target.files]){if(blobs.length>=3)break;try{blobs.push(await shrink(f))}catch(_){}}
+  e.target.value='';thumbs();
 };
 
-// دوال مساعدة لإنشاء عناصر HTML نظيفة
-function el(tag, cls, txt) {
-  const e = document.createElement(tag);
-  if (cls) e.className = cls;
-  if (txt != null) e.textContent = txt;
-  return e;
-}
+function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function list(title,arr){if(!arr||!arr.length)return null;const w=document.createElement('div');w.appendChild(el('h3',0,title));const u=el('ul');arr.forEach(x=>u.appendChild(el('li',0,x)));w.appendChild(u);return w}
 
-function list(title, arr) {
-  if (!arr || !arr.length) return null;
-  const w = document.createElement('div');
-  w.appendChild(el('h3', 0, title));
-  const u = el('ul');
-  arr.forEach(x => u.appendChild(el('li', 0, x)));
-  w.appendChild(u);
-  return w;
-}
-
-// عرض نتيجة التشخيص المنظمة داخل البطاقة
-function render(r) {
-  const box = $('#result');
-  box.innerHTML = '';
-  const card = el('div', 'card');
-
-  if (r.plant_name) {
-    card.appendChild(el('p', 'sub', 'النبات: ' + r.plant_name));
+function render(r){
+  const box=$('#result');box.innerHTML='';
+  const card=el('div','card');
+  if(r.plant_name)card.appendChild(el('p','sub','النبات: '+r.plant_name));
+  if(r.needs_more_info&&r.questions&&r.questions.length){
+    card.appendChild(el('p','q','الصورة والوصف لا يكفيان لتشخيص مؤكد. أجب عن هذه الأسئلة وأعد المحاولة:'));
+    const u=el('ul');r.questions.forEach(q=>u.appendChild(el('li',0,q)));card.appendChild(u);
   }
-
-  if (r.needs_more_info && r.questions && r.questions.length) {
-    card.appendChild(el('p', 'q', 'الصورة والوصف لا يكفيان لتشخيص مؤكد. أجب عن هذه الأسئلة وأعد المحاولة:'));
-    const u = el('ul');
-    r.questions.forEach(q => u.appendChild(el('li', 0, q)));
-    card.appendChild(u);
-  }
-
-  (r.diagnoses || []).forEach((d, i) => {
-    const s = el('div', i ? 'alt' : '');
-    s.appendChild(el('h2', 0, (i ? 'احتمال آخر: ' : 'التشخيص الأرجح: ') + d.name));
-
-    const tags = el('div');
-    if (d.confidence) {
-      tags.appendChild(el('span', 'tag' + (d.confidence === 'عالية' ? ' hi' : ''), 'درجة الثقة: ' + d.confidence));
-    }
-    if (i === 0 && r.urgency) {
-      tags.appendChild(el('span', 'tag urg', 'الاستعجال: ' + r.urgency));
-    }
+  (r.diagnoses||[]).forEach((d,i)=>{
+    const s=el('div',i?'alt':'');
+    s.appendChild(el('h2',0,(i?'احتمال آخر: ':'التشخيص الأرجح: ')+d.name));
+    const tags=el('div');
+    if(d.confidence){tags.appendChild(el('span','tag'+(d.confidence==='عالية'?' hi':''),'درجة الثقة: '+d.confidence))}
+    if(i===0&&r.urgency){tags.appendChild(el('span','tag urg','الاستعجال: '+r.urgency))}
     s.appendChild(tags);
-
-    if (d.signs) s.appendChild(el('p', 0, d.signs));
-    if (d.cause) s.appendChild(el('p', 0, 'السبب: ' + d.cause));
-
-    [
-      list('الإسعاف الفوري', i ? null : r.immediate_steps),
-      list('العلاج العضوي والمنزلي', d.treatment_organic),
-      list('العلاج الكيميائي', d.treatment_chemical),
-      list('الوقاية', d.prevention)
-    ].forEach(x => x && s.appendChild(x));
-
+    if(d.signs)s.appendChild(el('p',0,d.signs));
+    if(d.cause)s.appendChild(el('p',0,'السبب: '+d.cause));
+    [list('الإسعاف الفوري',i?null:r.immediate_steps),list('العلاج العضوي والمنزلي',d.treatment_organic),list('العلاج الكيميائي',d.treatment_chemical),list('الوقاية',d.prevention)].forEach(x=>x&&s.appendChild(x));
     card.appendChild(s);
   });
-
-  if (r.when_to_ask_expert) {
-    card.appendChild(el('div', 'warn', 'متى تسأل مهندسًا زراعيًا: ' + r.when_to_ask_expert));
-  }
-
-  card.appendChild(el('div', 'warn', 'هذا تشخيص مبدئي بالذكاء الاصطناعي وقد يخطئ. عند استخدام أي مبيد اقرأ الملصق، والبس قفازات وكمامة، وجرّبه على ورقة واحدة أولًا.'));
-
-  box.appendChild(card);
-  box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if(r.when_to_ask_expert)card.appendChild(el('div','warn','متى تسأل مهندسًا زراعيًا: '+r.when_to_ask_expert));
+  card.appendChild(el('div','warn','هذا تشخيص مبدئي بالذكاء الاصطناعي وقد يخطئ. عند استخدام أي مبيد اقرأ الملصق، والبس قفازات وكمامة، وجرّبه على ورقة واحدة أولًا.'));
+  box.appendChild(card);box.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-// تحويل الملف إلى Base64 لإرساله إلى Gemini API
-const b64 = b => new Promise(r => {
-  const f = new FileReader();
-  f.onload = () => r(f.result.split(',')[1]);
-  f.readAsDataURL(b);
-});
-
-// دالة الإرسال مع إعادة المحاولة التلقائية عند الضغط (Exponential Backoff)
-async function fetchWithRetry(url, options, maxRetries = 4) {
-  let delay = 1000;
-  for (let i = 0; i <= maxRetries; i++) {
-    const res = await fetch(url, options);
-    if (res.ok) return res;
-    if ((res.status === 429 || res.status >= 500) && i < maxRetries) {
-      await new Promise(resolve => setTimeout(resolve, delay));
-      delay *= 2;
-      continue;
-    }
-    const err = new Error('http');
-    err.status = res.status;
-    throw err;
-  }
-}
-
-// زر تشخيص المشكلة
-$('#go').onclick = async () => {
-  const m = $('#msg');
-  const plant = $('#plant').value.trim();
-  const desc = $('#desc').value.trim();
-  const apiKey = ""; // يتم تزويده تلقائياً في بيئة التشغيل
-  const model = "gemini-3-flash-preview";
-
-  m.className = 'msg';
-
-  if (!blobs.length && !desc) {
-    m.className = 'msg err';
-    m.textContent = 'أضف صورة أو اكتب وصفًا للمشكلة.';
-    return;
-  }
-
-  $('#go').disabled = true;
-  m.innerHTML = '<span class="spin"></span>جارٍ فحص النبات…';
-
-  try {
-    const prompt = 'أنت مهندس زراعي خبير في أمراض النبات والآفات ونقص العناصر. حلّل حالة النبات' +
-      (blobs.length ? ' من الصور المرفقة' : '') +
-      ' ومن المعلومات التالية.\nنوع النبات: ' + (plant || 'غير معروف') +
-      '\nوصف المستخدم: ' + (desc || 'لا يوجد') + '\n' +
-      'اكتب بالعربية المبسطة. رتّب حتى 3 تشخيصات محتملة من الأرجح. لا تجزم عند الشك. في العلاج الكيميائي اذكر المادة الفعالة أو الفئة لا العلامات التجارية، وذكّر بقراءة الملصق. إن كانت المعلومات غير كافية اجعل needs_more_info true واكتب أسئلة محددة. أعد JSON فقط بهذا الشكل: {"plant_name":"","urgency":"منخفض|متوسط|عالٍ","needs_more_info":false,"questions":[],"immediate_steps":[],"diagnoses":[{"name":"","confidence":"عالية|متوسطة|منخفضة","signs":"","cause":"","treatment_organic":[],"treatment_chemical":[],"prevention":[]}],"when_to_ask_expert":""}';
-
-    const parts = [{ text: prompt }];
-    for (const b of blobs) {
-      parts.push({
-        inlineData: {
-          mimeType: 'image/jpeg',
-          data: await b64(b)
-        }
-      });
-    }
-
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-    const payload = {
-      contents: [{ parts }],
-      generationConfig: {
-        responseMimeType: 'application/json'
-      }
-    };
-
-    const r = await fetchWithRetry(apiUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-
-    const j = await r.json();
-    const t = (j.candidates && j.candidates[0] && j.candidates[0].content.parts.map(p => p.text).join('')) || '';
-    const parsed = JSON.parse(t.replace(/```json|```/g, '').trim());
-
-    render(parsed);
-    m.textContent = '';
-  } catch (e) {
-    m.className = 'msg err';
-    if (e.status === 429) {
-      m.textContent = 'وصلت للحد المسموح حاليًا. انتظر دقيقة ثم أعد المحاولة.';
-    } else {
-      m.textContent = 'تعذّر التشخيص. تأكد من الإنترنت وجرّب مرة أخرى.';
-    }
-  } finally {
-    $('#go').disabled = false;
-  }
+const MODEL='gemini-2.5-flash';
+const KEY='AIzaSyضع_مفتاحك_الصحيح_هنا';
+const b64=b=>new Promise(r=>{const f=new FileReader();f.onload=()=>r(f.result.split(',')[1]);f.readAsDataURL(b)});
+$('#go').onclick=async()=>{
+  const m=$('#msg'),plant=$('#plant').value.trim(),desc=$('#desc').value.trim();const key=KEY;
+  m.className='msg';
+  if(!key||key.includes('ضع_مفتاحك')){m.className='msg err';m.textContent='الصق مفتاح Gemini أولًا.';return}
+  if(!blobs.length&&!desc){m.className='msg err';m.textContent='أضف صورة أو اكتب وصفًا للمشكلة.';return}
+  $('#go').disabled=true;m.innerHTML='<span class="spin"></span>جارٍ فحص النبات…';
+  try{
+    const prompt='أنت مهندس زراعي خبير في أمراض النبات والآفات ونقص العناصر. حلّل حالة النبات'+(blobs.length?' من الصور المرفقة':'')+' ومن المعلومات التالية.\nنوع النبات: '+(plant||'غير معروف')+'\nوصف المستخدم: '+(desc||'لا يوجد')+'\n'+
+    'اكتب بالعربية المبسطة. رتّب حتى 3 تشخيصات محتملة من الأرجح. لا تجزم عند الشك. في العلاج الكيميائي اذكر المادة الفعالة أو الفئة لا العلامات التجارية، وذكّر بقراءة الملصق. إن كانت المعلومات غير كافية اجعل needs_more_info true واكتب أسئلة محددة. أعد JSON فقط بهذا الشكل: {"plant_name":"","urgency":"منخفض|متوسط|عالٍ","needs_more_info":false,"questions":[],"immediate_steps":[],"diagnoses":[{"name":"","confidence":"عالية|متوسطة|منخفضة","signs":"","cause":"","treatment_organic":[],"treatment_chemical":[],"prevention":[]}],"when_to_ask_expert":""}';
+    const parts=[{text:prompt}];
+    for(const b of blobs)parts.push({inlineData:{mimeType:'image/jpeg',data:await b64(b)}});
+    const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+MODEL+':generateContent?key='+encodeURIComponent(key),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts}],generationConfig:{responseMimeType:'application/json'}})});
+    if(!r.ok){const e=new Error('http');e.status=r.status;throw e}
+    const j=await r.json();
+    const t=(j.candidates&&j.candidates[0]&&j.candidates[0].content.parts.map(p=>p.text).join(''))||'';
+    render(JSON.parse(t.replace(/```json|```/g,'').trim()));m.textContent='';
+  }catch(e){
+    m.className='msg err';
+    m.textContent=e.status===400||e.status===403?'المفتاح غير صحيح. تأكد من نسخه كاملًا من aistudio.google.com/apikey':e.status===429?'وصلت للحد المجاني حاليًا. انتظر دقيقة ثم أعد المحاولة.':'تعذّر التشخيص. تأكد من الإنترنت وجرّب مرة أخرى.';
+  }finally{$('#go').disabled=false}
 };
 </script>
 </body>
 </html>
-```
