@@ -48,7 +48,7 @@ h1{margin:0;font-size:22px;font-weight:800}h1 span{color:var(--br)}
 .b.a{align-self:flex-start;background:var(--sf);border:1px solid var(--ln);border-end-start-radius:4px}
 .b.m{align-self:flex-end;background:var(--br);color:#fff;border-end-end-radius:4px}
 @media (prefers-color-scheme:dark){.b.m{color:#1a1405}}
-.b .t{display:none;margin-top:6px;font-size:14px;opacity:.9;border-top:1px solid currentColor;padding-top:6px}.b.sh .t{display:block}
+.b .t{display:block;margin-top:6px;font-size:14px;opacity:.9;border-top:1px solid currentColor;padding-top:6px}.b.sh .t{display:block}
 input{width:100%;font:inherit;font-size:22px;padding:12px;border-radius:12px;border:1.5px solid var(--ln);background:var(--bg);color:var(--tx);direction:ltr;text-align:center}
 .fb{min-height:26px;font-weight:800;margin-top:8px;text-align:center}
 .bar{height:8px;background:var(--brs);border-radius:9px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--br)}
@@ -98,11 +98,11 @@ if(T=="home"){v.innerHTML=`<div class="card hero"><h2>يلا نبدأ ألمان
 <div class="card"><b>هدفك النهارده</b><div class="bar"><i style="width:${Math.min(100,st.xp%100)}%"></i></div><small style="color:var(--mu)">كل نطق صح أو إجابة صح = نقاط</small></div>`}
 if(T=="letters"){v.innerHTML=`<h3>الحروف والأصوات (دوس واسمع)</h3><div class="grid">${L.map((x,i)=>`<button class="let" data-l="${i}"><div class="c de">${x[0]}</div><div class="s">${x[1]}</div><div class="e de">${x[2]}</div></button>`).join("")}</div>`}
 if(T=="words"){const a=W[st.cat],w=a[st.i%a.length];v.innerHTML=`<div class="chips">${Object.keys(W).map(k=>`<button class="chip ${k==st.cat?"on":""}" data-cat="${k}">${k}</button>`).join("")}</div>
-<div class="card flash" data-flip><div class="big de">${w[0]}</div><div class="ph">النطق: ${w[2]}</div>${st.flip?`<div class="ar">${w[1]}</div>`:'<div class="ph">دوس عشان تشوف المعنى</div>'}</div>
+<div class="card flash" data-flip><div class="big de">${w[0]}</div><div class="ph">النطق: ${w[2]}</div><div class="ar">المعنى: ${w[1]}</div></div>
 <div class="row"><button class="btn o" data-say="${w[0]}">🔊 اسمع</button><button class="btn o" data-mic="${w[0]}">🎙️ انطق</button><button class="btn" data-next>التالي</button></div><div class="card" id="res" style="margin-top:12px;text-align:center">اضغط انطق وقول الكلمة</div>`}
-if(T=="sents"){const s=S[st.si%S.length];v.innerHTML=`<div class="card"><div class="sent">${s[0]}</div><div class="ph" style="margin-top:8px">النطق: ${s[2]}</div><div class="ar" style="margin-top:6px">${s[1]}</div>
+if(T=="sents"){const s=S[st.si%S.length];v.innerHTML=`<div class="card"><div class="sent">${s[0]}</div><div class="ph" style="margin-top:8px">النطق: ${s[2]}</div><div class="ar" style="margin-top:10px">المعنى: ${s[1]}</div>
 <div class="row"><button class="btn o" data-say="${esc(s[0])}">🔊 اسمع</button><button class="btn o" data-mic="${esc(s[0])}">🎙️ انطق</button><button class="btn" data-snext>الجملة التالية</button></div></div><div class="card" id="res" style="text-align:center">اضغط انطق وقول الجملة — هقولك نطقت صح ولا لأ</div>`}
-if(T=="chat"){const c=C[st.ci];v.innerHTML=`<div class="chips">${C.map((x,i)=>`<button class="chip ${i==st.ci?"on":""}" data-ci="${i}">${x.t}</button>`).join("")}</div><p class="ph">دوس على أي رسالة تشوف ترجمتها بالمصري واسمع نطقها.</p><div class="chat">${c.l.map((m,i)=>`<div class="b ${m[0]}" data-b="${i}"><div class="de">${m[1]}</div><div class="t">${m[2]}</div></div>`).join("")}</div>`}
+if(T=="chat"){const c=C[st.ci];v.innerHTML=`<div class="chips">${C.map((x,i)=>`<button class="chip ${i==st.ci?"on":""}" data-ci="${i}">${x.t}</button>`).join("")}</div><p class="ph">الترجمة بالمصري تحت كل رسالة، ودوس على الرسالة تسمع نطقها.</p><div class="chat">${c.l.map((m,i)=>`<div class="b ${m[0]}" data-b="${i}"><div class="de">${m[1]}</div><div class="t">${m[2]}</div></div>`).join("")}</div>`}
 if(T=="write"){const all=Object.values(W).flat(),w=all[st.wi%all.length];v.innerHTML=`<div class="card" style="text-align:center"><div class="ph">اكتب بالألماني:</div><div class="ar" style="font-size:30px;margin:8px 0">${w[1]}</div><button class="btn o sm" data-say="${w[0]}">🔊 تلميح صوتي</button></div>
 <input id="inp" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="...">
 <div class="row">${["ä","ö","ü","ß"].map(c=>`<button class="chip de" data-ch="${c}">${c}</button>`).join("")}</div>
