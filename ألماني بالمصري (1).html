@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ألماني بالمصري</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Fraunces:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1ea;--sf:#fff;--tx:#14213d;--mu:#6b7488;--br:#9a7412;--brs:#f3e7c2;--ok:#1f8a5b;--no:#c0392b;--ln:#e3dccb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1730;--sf:#15233f;--tx:#f3eee0;--mu:#93a0bb;--br:#e3b94a;--brs:#2a2f3f;--ok:#4cc38a;--no:#ff7a6b;--ln:#243558}}
+:root[data-theme="dark"]{--bg:#0d1730;--sf:#15233f;--tx:#f3eee0;--mu:#93a0bb;--br:#e3b94a;--brs:#2a2f3f;--ok:#4cc38a;--no:#ff7a6b;--ln:#243558}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Cairo,system-ui,sans-serif;padding-bottom:84px}
+.de{font-family:Fraunces,Georgia,serif;direction:ltr;unicode-bidi:isolate}
+main{max-width:620px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+h1{margin:0;font-size:22px;font-weight:800}h1 span{color:var(--br)}
+.xp{background:var(--brs);color:var(--br);padding:6px 14px;border-radius:99px;font-weight:800;font-size:14px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:18px;padding:16px;margin-bottom:12px}
+.hero{background:linear-gradient(160deg,#14284f,#0a1328);color:#f3eee0;border:0;padding:22px}
+.hero h2{margin:0 0 6px;font-size:24px}.hero p{margin:0 0 14px;color:#b9c3da;font-size:14px}
+.btn{border:0;background:var(--br);color:#fff;font:inherit;font-weight:800;padding:11px 20px;border-radius:12px;cursor:pointer}
+@media (prefers-color-scheme:dark){.btn{color:#1a1405}}
+.btn.o{background:transparent;color:var(--br);border:1.5px solid var(--br)}
+.btn.sm{padding:6px 12px;font-size:13px}
+.path{display:flex;flex-direction:column;gap:0}
+.lv{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--ln)}
+.lv:last-child{border:0}.dot{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--brs);color:var(--br);flex:none}
+.lv.lock{opacity:.5}.lv small{color:var(--mu);display:block}
+.tabs{position:fixed;bottom:0;left:0;right:0;background:var(--sf);border-top:1px solid var(--ln);display:flex;justify-content:space-around;padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));z-index:5}
+.tabs button{flex:1;border:0;background:none;color:var(--mu);font:inherit;font-size:12px;font-weight:600;padding:6px 0;cursor:pointer}
+.tabs button b{display:block;font-size:20px;line-height:1.2}.tabs .on{color:var(--br)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px}
+.let{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:10px 4px;text-align:center;cursor:pointer;font:inherit;color:var(--tx)}
+.let .c{font-size:28px;font-weight:800;color:var(--br)}.let .s{font-size:13px;font-weight:700}.let .e{font-size:11px;color:var(--mu)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px}
+.chip{border:1px solid var(--ln);background:var(--sf);color:var(--tx);padding:7px 14px;border-radius:99px;font:inherit;font-size:14px;white-space:nowrap;cursor:pointer}
+.chip.on{background:var(--br);color:#fff;border-color:var(--br)}
+@media (prefers-color-scheme:dark){.chip.on{color:#1a1405}}
+.flash{min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;cursor:pointer}
+.big{font-size:38px;font-weight:800}.ph{color:var(--mu);font-size:15px}.ar{font-size:22px;font-weight:800;color:var(--br)}
+.row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.sent{font-size:20px;direction:ltr;text-align:left;font-family:Fraunces,serif;font-weight:600}
+.score{font-weight:800;font-size:18px;margin-top:8px}.ok{color:var(--ok)}.no{color:var(--no)}
+.chat{display:flex;flex-direction:column;gap:10px}
+.b{max-width:84%;padding:10px 14px;border-radius:16px;cursor:pointer}
+.b.a{align-self:flex-start;background:var(--sf);border:1px solid var(--ln);border-end-start-radius:4px}
+.b.m{align-self:flex-end;background:var(--br);color:#fff;border-end-end-radius:4px}
+@media (prefers-color-scheme:dark){.b.m{color:#1a1405}}
+.b .t{display:none;margin-top:6px;font-size:14px;opacity:.9;border-top:1px solid currentColor;padding-top:6px}.b.sh .t{display:block}
+input{width:100%;font:inherit;font-size:22px;padding:12px;border-radius:12px;border:1.5px solid var(--ln);background:var(--bg);color:var(--tx);direction:ltr;text-align:center}
+.fb{min-height:26px;font-weight:800;margin-top:8px;text-align:center}
+.bar{height:8px;background:var(--brs);border-radius:9px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--br)}
+h3{margin:4px 0 10px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<header><h1>ألماني <span>بالمصري</span></h1><div class="xp" id="xp">⭐ 0</div></header>
+<div id="v"></div>
+</main>
+<nav class="tabs" id="tabs"></nav>
+<script>
+const L=[["A a","آ","Apfel","تفاحة"],["B b","بيه","Buch","كتاب"],["C c","تسيه","Computer","كمبيوتر"],["D d","ديه","Danke","شكراً"],["E e","إيه","Essen","أكل"],["F f","إف","Freund","صاحب"],["G g","جيه","Gut","كويس"],["H h","هاه","Haus","بيت"],["I i","إي","Ich","أنا"],["J j","يوت","Ja","أيوه"],["K k","كاه","Kaffee","قهوة"],["L l","إل","Liebe","حب"],["M m","إم","Mutter","ماما"],["N n","إن","Nein","لأ"],["O o","أو","Ohr","ودن"],["P p","بيه","Papier","ورق"],["Q q","كو","Quelle","مصدر"],["R r","إر","Rot","أحمر"],["S s","إس (ز)","Sonne","شمس"],["T t","تيه","Tisch","ترابيزة"],["U u","أوو","Uhr","ساعة"],["V v","فاو","Vater","بابا"],["W w","فيه (ڤ)","Wasser","مية"],["X x","إكس","Taxi","تاكسي"],["Y y","أوبسيلون","Yoga","يوجا"],["Z z","تسيت","Zeit","وقت"],["Ä ä","إيه طويلة","Äpfel","تفاح"],["Ö ö","أُوه","Öl","زيت"],["Ü ü","أُوو","Über","فوق"],["ß","إس-تسيت (سّ)","Straße","شارع"],["sch","ش","Schule","مدرسة"],["ch","خ","Ich","أنا"],["ei","آي","Nein","لأ"],["eu","أوي","Heute","النهارده"],["ie","إي طويلة","Liebe","حب"]];
+const W={"تحيات":[["Hallo","أهلاً","هالو"],["Guten Morgen","صباح الخير","جوتن مورجن"],["Guten Abend","مساء الخير","جوتن آبند"],["Danke","شكراً","دانكه"],["Bitte","من فضلك / العفو","بيته"],["Tschüss","سلام","تشوس"],["Ja","أيوه","يا"],["Nein","لأ","ناين"]],
+"أرقام":[["eins","١","آينس"],["zwei","٢","تسفاي"],["drei","٣","دراي"],["vier","٤","فير"],["fünf","٥","فونف"],["sechs","٦","زيكس"],["sieben","٧","زيبن"],["zehn","١٠","تسين"]],
+"أكل":[["Wasser","مية","فاسر"],["Brot","عيش","بروت"],["Apfel","تفاحة","أبفل"],["Milch","لبن","ميلش"],["Kaffee","قهوة","كافيه"],["Reis","رز","رايس"],["Fleisch","لحمة","فلايش"],["Käse","جبنة","كيزه"]],
+"عيلة":[["Mutter","ماما","موتر"],["Vater","بابا","فاتر"],["Bruder","أخ","برودر"],["Schwester","أخت","شفستر"],["Kind","طفل","كيند"],["Freund","صاحب","فرويند"],["Oma","تيتة","أوما"],["Opa","جدو","أوبا"]]};
+const S=[["Hallo, wie geht’s dir?","إزيك؟ عامل إيه؟","هالو، في جيتس دير؟"],["Ich heiße Ahmed.","اسمي أحمد.","إيش هايسه أحمد"],["Ich komme aus Ägypten.","أنا من مصر.","إيش كومه آوس إيجيبتن"],["Ich möchte einen Kaffee, bitte.","عايز قهوة لو سمحت.","إيش موشته آينن كافيه، بيته"],["Wie viel kostet das?","ده بكام؟","في فيل كوستت داس؟"],["Ich verstehe das nicht.","مش فاهم ده.","إيش فرشتيه داس نيشت"],["Sprechen Sie bitte langsamer.","اتكلم أبطأ لو سمحت.","شبريشن زي بيته لانجزامر"],["Wo ist der Bahnhof?","فين محطة القطر؟","فو إيست دير بانهوف؟"],["Ich lerne Deutsch.","أنا بتعلم ألماني.","إيش ليرنه دويتش"],["Ich habe Hunger.","أنا جعان.","إيش هابه هونجر"]];
+const C=[{t:"في الكافيه ☕",l:[["a","Guten Tag! Was möchten Sie?","يوم سعيد! تؤمر بإيه؟"],["m","Einen Kaffee mit Milch, bitte.","قهوة بلبن لو سمحت."],["a","Gerne. Sonst noch etwas?","حاضر. أي حاجة تانية؟"],["m","Nein, danke. Wie viel kostet das?","لأ شكراً. بكام ده؟"],["a","Drei Euro fünfzig.","تلاتة يورو ونص."],["m","Bitte schön. Danke!","اتفضل. شكراً!"]]},
+{t:"التعارف 👋",l:[["a","Hallo! Ich bin Anna. Und du?","هالو! أنا آنا. وإنت؟"],["m","Ich heiße Ahmed. Ich komme aus Ägypten.","اسمي أحمد. أنا من مصر."],["a","Wie schön! Sprichst du Deutsch?","جميل! بتتكلم ألماني؟"],["m","Ein bisschen. Ich lerne noch.","شوية. لسه بتعلم."],["a","Das klingt super!","ده حلو أوي!"],["m","Danke! Freut mich.","شكراً! أنا مبسوط بمعرفتك."]]}];
+let st={xp:0,tab:"home",cat:"تحيات",i:0,flip:false,wi:0,si:0,ci:0,msg:"",sc:null};
+try{st.xp=+localStorage.getItem("xp")||0}catch(e){}
+const $=s=>document.querySelector(s);
+function add(n){st.xp+=n;try{localStorage.setItem("xp",st.xp)}catch(e){}$("#xp").textContent="⭐ "+st.xp}
+function say(t){try{const u=new SpeechSynthesisUtterance(t);u.lang="de-DE";u.rate=.8;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+function norm(s){return s.toLowerCase().replace(/[^a-zäöüß ]/g,"").trim()}
+function sim(a,b){a=norm(a);b=norm(b);const m=a.length,n=b.length;if(!m||!n)return 0;let d=Array.from({length:m+1},(_,i)=>[i]);for(let j=1;j<=n;j++)d[0][j]=j;for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));return Math.round(100*(1-d[m][n]/Math.max(m,n)))}
+function listen(target){const R=window.SpeechRecognition||window.webkitSpeechRecognition;const o=$("#res");if(!R){o.innerHTML='<span class="no">المتصفح ده مش بيدعم تتبع الصوت. جرّب Chrome أو Safari.</span>';return}
+const r=new R();r.lang="de-DE";r.maxAlternatives=3;o.textContent="🎙️ اتكلم دلوقتي...";
+r.onresult=e=>{let best=0,txt="";for(const a of e.results[0]){const s=sim(a.transcript,target);if(s>=best){best=s;txt=a.transcript}}
+o.innerHTML=`<div class="de">${txt}</div><div class="score ${best>=75?"ok":"no"}">${best}% — ${best>=90?"نطق ممتاز! 🔥":best>=75?"كويس جداً 👏":"حاول تاني واسمع النطق الأول"}</div>`;if(best>=75)add(10)};
+r.onerror=e=>{o.innerHTML='<span class="no">'+(e.error=="not-allowed"?"اسمح للميكروفون من إعدادات المتصفح.":"مسمعتش حاجة، جرّب تاني.")+"</span>"};
+try{r.start()}catch(e){}}
+const tabs=[["home","🏠","الرئيسية"],["letters","🔤","الحروف"],["words","📚","كلمات"],["sents","🗣️","جمل"],["chat","💬","محادثات"],["write","✍️","كتابة"]];
+function nav(){$("#tabs").innerHTML=tabs.map(t=>`<button class="${st.tab==t[0]?"on":""}" data-go="${t[0]}"><b>${t[1]}</b>${t[2]}</button>`).join("")}
+function esc(s){return s.replace(/'/g,"&#39;")}
+function render(){nav();const v=$("#v");const T=st.tab;
+if(T=="home"){v.innerHTML=`<div class="card hero"><h2>يلا نبدأ ألماني من الصفر</h2><p>حروف، كلمات، جمل ومحادثات — بالشرح المصري ومع تصحيح نطقك.</p><button class="btn" data-go="letters">ابدأ بالحروف</button></div>
+<div class="card"><h3>خريطة الطريق</h3><div class="path">
+<div class="lv"><div class="dot">A1</div><div><b>المبتدئ</b><small>حروف، تحيات، أرقام، جمل الحياة اليومية — متاح دلوقتي</small></div></div>
+<div class="lv lock"><div class="dot">A2</div><div><b>الأساسي</b><small>الماضي، السفر، التسوق — قريباً</small></div></div>
+<div class="lv lock"><div class="dot">B1</div><div><b>المتوسط</b><small>محادثات أطول وكتابة رسائل — قريباً</small></div></div>
+<div class="lv lock"><div class="dot">B2</div><div><b>فوق المتوسط</b><small>نقاشات ومقالات — قريباً</small></div></div>
+<div class="lv lock"><div class="dot">C1</div><div><b>الاحتراف</b><small>ألماني بطلاقة — قريباً</small></div></div></div></div>
+<div class="card"><b>هدفك النهارده</b><div class="bar"><i style="width:${Math.min(100,st.xp%100)}%"></i></div><small style="color:var(--mu)">كل نطق صح أو إجابة صح = نقاط</small></div>`}
+if(T=="letters"){v.innerHTML=`<h3>الحروف والأصوات (دوس واسمع)</h3><div class="grid">${L.map((x,i)=>`<button class="let" data-l="${i}"><div class="c de">${x[0]}</div><div class="s">${x[1]}</div><div class="e de">${x[2]}</div></button>`).join("")}</div>`}
+if(T=="words"){const a=W[st.cat],w=a[st.i%a.length];v.innerHTML=`<div class="chips">${Object.keys(W).map(k=>`<button class="chip ${k==st.cat?"on":""}" data-cat="${k}">${k}</button>`).join("")}</div>
+<div class="card flash" data-flip><div class="big de">${w[0]}</div><div class="ph">النطق: ${w[2]}</div>${st.flip?`<div class="ar">${w[1]}</div>`:'<div class="ph">دوس عشان تشوف المعنى</div>'}</div>
+<div class="row"><button class="btn o" data-say="${w[0]}">🔊 اسمع</button><button class="btn o" data-mic="${w[0]}">🎙️ انطق</button><button class="btn" data-next>التالي</button></div><div class="card" id="res" style="margin-top:12px;text-align:center">اضغط انطق وقول الكلمة</div>`}
+if(T=="sents"){const s=S[st.si%S.length];v.innerHTML=`<div class="card"><div class="sent">${s[0]}</div><div class="ph" style="margin-top:8px">النطق: ${s[2]}</div><div class="ar" style="margin-top:6px">${s[1]}</div>
+<div class="row"><button class="btn o" data-say="${esc(s[0])}">🔊 اسمع</button><button class="btn o" data-mic="${esc(s[0])}">🎙️ انطق</button><button class="btn" data-snext>الجملة التالية</button></div></div><div class="card" id="res" style="text-align:center">اضغط انطق وقول الجملة — هقولك نطقت صح ولا لأ</div>`}
+if(T=="chat"){const c=C[st.ci];v.innerHTML=`<div class="chips">${C.map((x,i)=>`<button class="chip ${i==st.ci?"on":""}" data-ci="${i}">${x.t}</button>`).join("")}</div><p class="ph">دوس على أي رسالة تشوف ترجمتها بالمصري واسمع نطقها.</p><div class="chat">${c.l.map((m,i)=>`<div class="b ${m[0]}" data-b="${i}"><div class="de">${m[1]}</div><div class="t">${m[2]}</div></div>`).join("")}</div>`}
+if(T=="write"){const all=Object.values(W).flat(),w=all[st.wi%all.length];v.innerHTML=`<div class="card" style="text-align:center"><div class="ph">اكتب بالألماني:</div><div class="ar" style="font-size:30px;margin:8px 0">${w[1]}</div><button class="btn o sm" data-say="${w[0]}">🔊 تلميح صوتي</button></div>
+<input id="inp" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="...">
+<div class="row">${["ä","ö","ü","ß"].map(c=>`<button class="chip de" data-ch="${c}">${c}</button>`).join("")}</div>
+<div class="row"><button class="btn" data-chk>تحقق</button><button class="btn o" data-wnext>التالي</button></div><div class="fb ${st.sc?"ok":""}" id="fb">${st.msg}</div>`}}
+document.addEventListener("click",e=>{const t=e.target.closest("[data-go],[data-l],[data-cat],[data-flip],[data-say],[data-mic],[data-next],[data-snext],[data-ci],[data-b],[data-ch],[data-chk],[data-wnext]");if(!t)return;const d=t.dataset;
+if(d.go){st.tab=d.go;st.msg="";return render()}
+if(d.l!==undefined){const x=L[d.l];say(x[2]);add(1);return}
+if(d.cat){st.cat=d.cat;st.i=0;st.flip=false;return render()}
+if("flip" in d){st.flip=!st.flip;return render()}
+if(d.say){return say(d.say)}
+if(d.mic){return listen(d.mic)}
+if("next" in d){st.i++;st.flip=false;add(2);return render()}
+if("snext" in d){st.si++;return render()}
+if(d.ci){st.ci=+d.ci;return render()}
+if(d.b!==undefined){t.classList.toggle("sh");say(C[st.ci].l[d.b][1]);return}
+if(d.ch){const i=$("#inp");i.value+=d.ch;i.focus();return}
+if("chk" in d){const all=Object.values(W).flat(),w=all[st.wi%all.length];const ok=norm($("#inp").value)==norm(w[0]);st.sc=ok;$("#fb").className="fb "+(ok?"ok":"no");$("#fb").textContent=ok?"صح! 🎉 +10":"لأ، الكلمة: "+w[0];if(ok)add(10);return}
+if("wnext" in d){st.wi++;st.msg="";st.sc=null;return render()}});
+render();$("#xp").textContent="⭐ "+st.xp;
+</script>
+</body>
+</html>
